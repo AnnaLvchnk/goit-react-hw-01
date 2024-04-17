@@ -1,44 +1,34 @@
-import css from './Profile.module.css'; // Імпорт CSS модуля
-import PropTypes from "prop-types";
+import css from "../Profile/Profile.module.css";
 
-const Profile = ({ name, tag, location, image, stats }) => {
+export default function Profile({ name, tag, location, image, stats }) {
   return (
-    <div className={css['profile-container']}>
-      <div>
-        <img src={image} alt="User avatar" />
+    <div className={css.container}>
+      <div className={css.card}>
+        <img
+          className={css.icon}
+          src={image}
+          alt="User avatar"
+          width="200"
+        />
         <p className={css.name}>{name}</p>
-        <p className={css.tag}>@{tag}</p>
-        <p className={css.location}>{location}</p>
+        <p>@{tag}</p>
+        <p>{location}</p>
       </div>
 
-      <ul className={css['stats-list']}>
-        <li>
+      <ul className={css.stats}>
+        <li className={css.list}>
           <span>Followers</span>
-          <span>{stats.followers}</span>
+          <span className={css.amount}>{stats.followers}</span>
         </li>
-        <li>
+        <li className={css.list}>
           <span>Views</span>
-          <span>{stats.views}</span>
+          <span className={css.amount}>{stats.views}</span>
         </li>
-        <li>
+        <li className={css.list}>
           <span>Likes</span>
-          <span>{stats.likes}</span>
+          <span className={css.amount}>{stats.likes}</span>
         </li>
       </ul>
     </div>
-  )
+  );
 }
-
-Profile.propTypes = {
-  name: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  stats: PropTypes.shape({
-    followers: PropTypes.number.isRequired,
-    views: PropTypes.number.isRequired,
-    likes: PropTypes.number.isRequired,
-  }).isRequired,
-};
-
-export default Profile

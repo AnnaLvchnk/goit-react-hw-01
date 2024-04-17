@@ -1,21 +1,29 @@
-.transaction-history {
+.table {
+    border: 2px solid #2b2a2a;
     width: 100%;
-    margin-top: 20px;
-    font-size: 20px;
+    padding: 0;
+    border-spacing: 0;
+    border-radius: 3px;
 }
 
-.transaction-history-table {
-    width: 100%;
-    border-collapse: collapse;
+.title {
+    color: #FFFFFF;
+    background-color: #383737;
 }
 
-.transaction-history-table th,
-.transaction-history-table td {
-    border: 1px solid #646262;
-    padding: 8px;
+.column {
+    color: #383737;
+    text-align: center;
 }
 
-.transaction-history-table th {
-    background-color: #121111;
-    color: #fff;
+.column:not(:last-child) {
+    border-right: 1px solid #000000;
+}
+
+.line {
+    border-bottom: 2px solid #000000;
+}
+
+.line:nth-child(even) {
+    background-color: rgb(180, 179, 179);
 }
